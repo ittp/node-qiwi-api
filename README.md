@@ -18,7 +18,8 @@ Initialise new wallet instance with your access token:
 ```js
 const person_id = (process.env.WALLET_ID || '791214567890');
 const token = (process.env.WALLET_TOKEN || 'sdrfrewgetbsadfg53r3sa')
-
+```
+```js
 var callbackQiwi = require('node-qiwi-api').callbackApi;
 var callbackWallet = new callbackQiwi(token);
 ```
