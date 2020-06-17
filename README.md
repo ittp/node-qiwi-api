@@ -16,10 +16,15 @@ You can use callback and promise based api.
 
 Initialise new wallet instance with your access token:
 ```js
-var callbackQiwi = require('node-qiwi-api').callbackApi;
-var asyncQiwi = require('node-qiwi-api').asyncApi;
+const person_id = (process.env.WALLET_ID || '791214567890');
+const token = (process.env.WALLET_TOKEN || 'sdrfrewgetbsadfg53r3sa')
 
+var callbackQiwi = require('node-qiwi-api').callbackApi;
 var callbackWallet = new callbackQiwi(token);
+```
+**async**
+```js
+var asyncQiwi = require('node-qiwi-api').asyncApi;
 var asyncWallet = new asyncQiwi(token);
 ```
 Now you can get information about your wallet and make money transfers.
@@ -29,26 +34,27 @@ Now you can get information about your wallet and make money transfers.
 Identification data
 ----------------
 ```js
-wallet.getIdentificationData(wallet, (err, data) => {
+
+wallet.getIdentificationData(person_id, (err, data) => {
   if(err) {
     /*hanle error*/
   }
   console.log(data);
 })
 ```
-**wallet** - wallet number without plus (+) and with prefix (79991234567)
+**person_id** - wallet number without plus (+) and with prefix (79991234567)
 
 Identify wallet
 ----------------
 ```js
-wallet.identifyWallet(wallet, requestOptions, (err, data) => {
+wallet.identifyWallet(person_id, requestOptions, (err, data) => {
   if(err) {
     /*hanle error*/
   }
   console.log(data);
 })
 ```
-**wallet** - wallet number without plus (+) and with prefix (79991234567)
+**person_id** - wallet number without plus (+) and with prefix (79991234567)
 
 requestOptions includes: 
 * **birthDate** - Date of birth (YYYY-MM-DD)
