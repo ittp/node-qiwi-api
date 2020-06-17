@@ -19,18 +19,20 @@ Initialise new wallet instance with your access token:
 const person_id = (process.env.WALLET_ID || '791214567890');
 const token = (process.env.WALLET_TOKEN || 'sdrfrewgetbsadfg53r3sa')
 ```
+**Callback API**
 ```js
 var callbackQiwi = require('node-qiwi-api').callbackApi;
-var callbackWallet = new callbackQiwi(token);
+var wallet = new callbackQiwi(token);
 ```
-**async**
+
+**ASync API**
 ```js
 var asyncQiwi = require('node-qiwi-api').asyncApi;
-var asyncWallet = new asyncQiwi(token);
+var wallet = new asyncQiwi(token);
 ```
 Now you can get information about your wallet and make money transfers.
 
-**Next examples presented for callback api.**
+**Next examples presented for Callback API.**
 
 Identification data
 ----------------
